@@ -343,6 +343,11 @@ export default function Portfolio() {
                         "Provisioned Azure Blob Storage containers and configured Unity Catalog metastore with three-level namespace (catalog.schema.table).",
                         "Set up Delta Live Tables pipelines with scheduled daily ingestion jobs. Power BI dashboards auto-refresh from a live Databricks SQL Warehouse.",
                       ]},
+                      {h:"DATA TRANSFORMATION",items:[
+                        "Type casting (string → double), date parsing, schema standardization (REF_DATE → observation_date), deduplication, pivoting (Google Trends long → wide + demand_trend_score).",
+                        "Rolling aggregations (3M/6M/12M), window functions (LAG for MoM%, YoY%), semi-structured parsing (SDMX XML, JSON), forward-fill for sparse temporal data.",
+                        "Feature engineering: lag features at 1/3/6/12 months, interaction terms, cyclical month_sin/cos. Business logic encoding: health_status, recommendation columns.",
+                      ]},
                       {h:"4 EXTERNAL DATA SOURCES",items:[
                         "FRED (Federal Reserve): 15 macro-economic series — oil WTI, FX CAD/USD, 10Y Treasury, Fed Funds rate, consumer sentiment, housing starts, PPI electronics, and more. REST API with keys in Azure Key Vault.",
                         "Statistics Canada: Electronics retail sales, inventory-to-sales ratio, electronics imports via CSV API.",
@@ -354,11 +359,6 @@ export default function Portfolio() {
                         "Bronze (6 tables): Raw JSON, CSV, XML payloads via Auto Loader with schema inference. Change Data Feed + Row Tracking on streaming tables.",
                         "Silver (14 tables): Cleaned and validated. Quarantine-based validation isolated 36,544 bad records (21,034 StatCan + 15,510 tariff rejects). Quality metrics tables per source.",
                         "Gold (19 tables): BI-ready aggregations — daily/monthly/rolling FRED stats, YoY changes, 30-day volatility, inventory health scores, import trends, tariff breakdowns, and a unified ML training dataset with 46 columns.",
-                      ]},
-                      {h:"DATA TRANSFORMATION",items:[
-                        "Type casting (string → double), date parsing, schema standardization (REF_DATE → observation_date), deduplication, pivoting (Google Trends long → wide + demand_trend_score).",
-                        "Rolling aggregations (3M/6M/12M), window functions (LAG for MoM%, YoY%), semi-structured parsing (SDMX XML, JSON), forward-fill for sparse temporal data.",
-                        "Feature engineering: lag features at 1/3/6/12 months, interaction terms, cyclical month_sin/cos. Business logic encoding: health_status, recommendation columns.",
                       ]},
                       {h:"ML MODEL — XGBOOST REGRESSOR",items:[
                         "Trained with 14 selected features from the 46-feature dataset. Top feature: PPI Electronics (0.52 importance), followed by 1-month lag (0.19) and Fed Funds rate (0.09).",
@@ -381,9 +381,9 @@ export default function Portfolio() {
                     "All 19 Gold tables as data sources. Custom instructions with business context, data caveats, formatting rules, table routing logic, FRED series IDs, and JOIN rules.",
                     "8 sample SQL queries for sales trends, forecasts, model accuracy, inventory health, macro indicators, tariffs, YoY comparisons, and feature importance.",
                   ]}/></div>
-                  <div style={{marginTop:20,borderRadius:8,overflow:"hidden",border:`1px solid ${C.border}`}}>
+                  <div style={{marginTop:20,borderRadius:8,overflow:"hidden",border:`1px solid ${C.border}`,background:"#1a1a1a"}}>
                     <div style={{fontSize:11,color:C.accent,fontFamily:C.mono,letterSpacing:"0.1em",padding:"12px 16px",background:C.surface}}>POWER BI DASHBOARD — LIVE</div>
-                    <iframe title="Canada_Buiz" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiZDQzMzE1OGEtOTY0MS00MDI2LTlhNDMtZGVhNmVmMzYwMTU5IiwidCI6ImViYjc4MjNkLTFjZjUtNGI3MS05MTJmLTRhYjI2MmViOWZjNCJ9" frameBorder="0" allowFullScreen={true} style={{display:"block"}}></iframe>
+                    <iframe title="Canada_Buiz" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiZDQzMzE1OGEtOTY0MS00MDI2LTlhNDMtZGVhNmVmMzYwMTU5IiwidCI6ImViYjc4MjNkLTFjZjUtNGI3MS05MTJmLTRhYjI2MmViOWZjNCJ9" frameBorder="0" allowFullScreen={true} style={{display:"block",background:"#1a1a1a"}}></iframe>
                   </div>
                 </Toggle>
               </div>
@@ -492,7 +492,7 @@ export default function Portfolio() {
                 <p style={{fontSize:14,color:C.muted,lineHeight:1.75}}>Four-year engineering degree with integrated co-op placements. Coursework spanning data structures, algorithms, OOP, databases, machine learning, signal processing, and software engineering.</p>
               </div>
               <div className="g-met" style={{alignSelf:"start"}}>
-                {[["2024","Graduated"],["Co-op","Integrated"],["Edmonton","Alberta"],["4 yr","Program"]].map(([big,small],i)=>(
+                {[["2024","Graduated"],["Co-op","Integrated"],["Edmonton","Alberta"],["5 yr","Program"]].map(([big,small],i)=>(
                   <div key={i} style={{background:C.surface,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px solid ${C.border}`}}>
                     <div style={{fontFamily:C.mono,fontSize:18,fontWeight:700,color:C.accent}}>{big}</div>
                     <div style={{fontSize:10,color:C.muted,textTransform:"uppercase",letterSpacing:"0.5px",marginTop:3}}>{small}</div>

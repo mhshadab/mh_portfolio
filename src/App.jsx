@@ -117,7 +117,7 @@ export default function Portfolio() {
         .desk-nav{display:flex;gap:24px;align-items:center}
         .mob-btn{display:none;background:none;border:none;color:${C.text};font-size:20px;cursor:pointer}
         .mob-nav{display:none}
-        .avail{font-family:${C.mono};font-size:11px;color:${C.accent};letter-spacing:0.1em;padding:8px 0;text-align:center;border-bottom:1px solid ${C.border}}
+        .avail{font-family:${C.mono};font-size:11px;color:${C.accent};letter-spacing:0.1em;padding:8px 0;text-align:center;border-bottom:1px solid ${C.border};background:${C.bg}}
         .hero-photo{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid ${C.accentMid};flex-shrink:0}
         @media(max-width:768px){
           .g2,.g-proj,.g-stack,.g-edu,.g-hack,.g-hero-main{grid-template-columns:1fr}
@@ -381,9 +381,9 @@ export default function Portfolio() {
                     "All 19 Gold tables as data sources. Custom instructions with business context, data caveats, formatting rules, table routing logic, FRED series IDs, and JOIN rules.",
                     "8 sample SQL queries for sales trends, forecasts, model accuracy, inventory health, macro indicators, tariffs, YoY comparisons, and feature importance.",
                   ]}/></div>
-                  <div style={{marginTop:20,borderRadius:8,overflow:"hidden",border:`1px solid ${C.border}`,background:"#1a1a1a"}}>
+                  <div style={{marginTop:20,borderRadius:8,overflow:"hidden",border:`1px solid ${C.border}`,background:C.bg}}>
                     <div style={{fontSize:11,color:C.accent,fontFamily:C.mono,letterSpacing:"0.1em",padding:"12px 16px",background:C.surface}}>POWER BI DASHBOARD — LIVE</div>
-                    <iframe title="Canada_Buiz" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiZDQzMzE1OGEtOTY0MS00MDI2LTlhNDMtZGVhNmVmMzYwMTU5IiwidCI6ImViYjc4MjNkLTFjZjUtNGI3MS05MTJmLTRhYjI2MmViOWZjNCJ9" frameBorder="0" allowFullScreen={true} style={{display:"block",background:"#1a1a1a"}}></iframe>
+                    <iframe title="Canada_Buiz" width="100%" height="450" src="https://app.powerbi.com/view?r=eyJrIjoiZDQzMzE1OGEtOTY0MS00MDI2LTlhNDMtZGVhNmVmMzYwMTU5IiwidCI6ImViYjc4MjNkLTFjZjUtNGI3MS05MTJmLTRhYjI2MmViOWZjNCJ9" frameBorder="0" allowFullScreen={true} style={{display:"block",background:C.bg}}></iframe>
                   </div>
                 </Toggle>
               </div>
